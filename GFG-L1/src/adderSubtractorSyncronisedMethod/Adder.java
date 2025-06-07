@@ -1,4 +1,4 @@
-package adderSubtractor;
+package adderSubtractorSyncronisedMethod;
 
 import java.util.concurrent.Callable;
 
@@ -12,7 +12,7 @@ public class Adder implements Callable<Integer> {
     @Override
     public Integer call() throws Exception {
         for(int i=1;i<=10000;i++){
-            count.value+=i;
+            count.incrementByX(i);
         }
         return count.value;
     }
