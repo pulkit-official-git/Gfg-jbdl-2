@@ -109,7 +109,7 @@ public class TransactionService {
         return transaction.getExternalId();
     }
 
-    private String initiateReturnTxn(Long studentId, Long bookId) throws Exception {
+    public String initiateReturnTxn(Long studentId, Long bookId) throws Exception {
 
 
         //        ######### DATA RETRIEVAL #########
@@ -158,7 +158,7 @@ public class TransactionService {
         return transaction.getExternalId();
     }
 
-    private Integer getFine(Book book, Student student){
+    public Integer getFine(Book book, Student student){
 
         Transaction issuedTxn = this.transactionRepository.findTopByBookAndStudentAndTransactionTypeAndTransactionStatusOrderByIdDesc(
                 book,student,TransactionType.ISSUANCE,TransactionStatus.SUCCESS
